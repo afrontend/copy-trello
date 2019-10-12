@@ -1,0 +1,7 @@
+$prefix: 'box';
+
+.#{$prefix}-list-wrap {
+  padding: 20px 30px;
+  float: left;
+  display: flex;
+}

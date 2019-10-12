@@ -1,0 +1,64 @@
+$width: 264px;
+$height: 32px;
+
+@mixin common-layout-style {
+  padding: 4px;
+  width: $width;
+  background-color: rgba(0,0,0,.08);
+}
+
+.add-list__btn {
+  @include common-layout-style;
+  display: flex;
+  flex-wrap: wrap;
+  height: $height;
+
+  align-items: center;
+  border-radius: 3px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0,0,0,.16);
+  }
+}
+
+.edit__box {
+  @include common-layout-style;
+  
+  input {
+    background: #fff;
+    border: none;
+    box-shadow: inset 0 0 0 2px #0079bf;
+    display: block;
+    margin: 0;
+    transition: margin 85ms ease-in,background 85ms ease-in;
+    width: 100%;
+    height: 30px;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    border-radius: 3px;
+  }
+}
+
+.edit__btn-box {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.edit__success-btn {
+  background-color: #5aac44;
+  box-shadow: none;
+  border: none;
+  color: #fff;
+  min-height: 32px;
+  height: 32px;
+  margin-top: 0;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-weight: 400;
+  border-radius: 4px;
+  margin-right: 4px;
+}
