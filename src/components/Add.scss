@@ -5,9 +5,11 @@ $height: 32px;
   padding: 4px;
   width: $width;
   background-color: rgba(0,0,0,.08);
+  box-sizing: border-box;
 }
 
-.add-list__btn {
+.add-list__btn,
+.add-list-item__btn {
   @include common-layout-style;
   display: flex;
   flex-wrap: wrap;
@@ -24,8 +26,21 @@ $height: 32px;
   }
 }
 
-.edit__box {
+.edit-list__btn {
   @include common-layout-style;
+
+  align-items: center;
+  border-radius: 3px;
+  font-size: 14px;
+  text-align: left;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.add__list {
+  @include common-layout-style;
+  
   
   input {
     background: #fff;
@@ -42,13 +57,13 @@ $height: 32px;
   }
 }
 
-.edit__btn-box {
+.add__btn-box {
   margin-top: 4px;
   display: flex;
   align-items: center;
 }
 
-.edit__success-btn {
+.add__btn-box__success-btn {
   background-color: #5aac44;
   box-shadow: none;
   border: none;
@@ -61,4 +76,10 @@ $height: 32px;
   font-weight: 400;
   border-radius: 4px;
   margin-right: 4px;
+}
+
+
+.edit__list-title {
+  // height: 28px;
+  width: 80%;
 }

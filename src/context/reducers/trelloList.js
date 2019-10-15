@@ -8,7 +8,7 @@ const actions = {
 
 const reducer = (state, { type, payload }) => {
   switch (type) {
-    case actions.ADD_LIST:
+    case actions.ADD_LIST: {
       const id = uuidv4();
 
       return {
@@ -16,20 +16,34 @@ const reducer = (state, { type, payload }) => {
         lists: {
           ...state.lists,
           [id]: {
+            ...payload,
             id,
-            items: [],
-            ...payload.listInfo
+            items: []
           }
         }
       };
+    }
     case actions.REMOVE_LIST:
       return {
         ...state
       };
-    case actions.UPDATE_LIST:
-      return {
-        ...state
+    case actions.UPDATE_LIST: {
+      const { id, name } = payload;
+      const originalListItem = state.lists[id] || {};
+      const updateList = {
+        ...originalListItem,
+        name
       };
+      return {
+        ...state,
+        lists: {
+          ...state.lists,
+          [id]: {
+            ...updateList
+          }
+        }
+      };
+    }
     default:
       return state;
   }
